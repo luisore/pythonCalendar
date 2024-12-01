@@ -3,14 +3,21 @@ import calendar
 
 def Calendar_See():
     window = Tk()
-
+    window.config(background="Light pink")
+    window.title("Complete year calendar")
+    window.geometry("600x700")
+    get_year = int(year_entry.get())
+    window_content = calendar.calendar(get_year)
+    year_cal = Label(window,text=window_content,font=("Arial",12,"bold"))
+    year_cal.grid(row=5,column=1,padx=20)
+    window.mainloop()
 
 
 if __name__ == "__main__":
     root = Tk()
     root.config(background="yellow")
     root.title("GUI Calendar")
-    root.geometry("280x170")
+    root.geometry("225x170")
 
     name = Label(root, text="Calendar", bg="light pink", font=("Arial",20,"bold"))
     name.grid(row=1,column=1)
